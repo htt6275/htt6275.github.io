@@ -1,1 +1,339 @@
-hello world
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Shaw">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>HTML5</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function handleCalc() {
+                var dw = document.body.clientWidth;
+                var minScale = dw / 1920;
+                if (minScale < 1200 / 1920) {
+                    minScale = 1200 / 1920;
+                } else if (minScale > 1) {
+                    minScale = 1;
+                }
+                document.documentElement.style.fontSize = (minScale * 100) + 'px';
+            }
+            handleCalc();
+            window.addEventListener('resize', handleCalc);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="page-wrap">
+        <div class="header-warp" id="headerWarp">
+            <div class="header-title">江西省粮食生产大数据展示平台</div>
+            <div class="header-info">
+                <div class="header-info-login"><img class="header-info-login-icon" src="./img/login.png" />登录</div>
+                <div class="header-info-login"><img class="header-info-login-icon" src="./img/login_out.png" />退出</div>
+            </div>
+        </div>
+        <div class="main-tab-warp">
+            <div class="main-tab-item tab-active" onclick="headerTab('1')">耕地面积</div>
+            <div class="main-tab-item" onclick="headerTab('2')">稻期统计</div>
+            <div class="main-tab-item" onclick="headerTab('3')">种植制度</div>
+            <div class="main-tab-item" onclick="headerTab('4')">种粮大户</div>
+            <div class="main-tab-item" onclick="headerTab('5')">样点资料</div>
+        </div>
+        <div id="mainWarp" class="main-warp">
+            <div class="main-left-search">
+                <div class="main-left-input">
+                    <select name="filter" id="province" onchange="selectProvince()">
+                        <option value='0'>省</option>
+                        <option value='1'>江西省</option>
+                    </select>
+                </div>
+                <div class="main-left-input">
+                    <select name="filter" id="city" onchange="selectCity()" disabled>
+                        <option value='0'>市</option>
+                        <option value='2'>南昌市</option>
+                        <option value='3'>景德镇市</option>
+                        <option value='4'>萍乡市</option>
+                        <option value='5'>九江市</option>
+                        <option value='6'>新余市</option>
+                        <option value='7'>鹰潭市</option>
+                    </select>
+                </div>
+                <div class="main-left-input">
+                    <select name="filter" id="area" disabled>
+                        <option value='0'>区</option>
+                    </select>
+                </div>
+                <div class="main-left-input">
+                    <select name="filter" id="year">
+                        <option value='0'>年</option>
+                        <option value='1'>2001</option>
+                        <option value='2'>2002</option>
+                        <option value='3'>2003</option>
+                        <option value='4'>2004</option>
+                        <option value='5'>2005</option>
+                        <option value='6'>2006</option>
+                        <option value='7'>2007</option>
+                    </select>
+                </div>
+                <div class="search-btn" onclick="search()">查询</div>
+            </div>
+            <div class="main-left">
+                <div class="main-left-header">
+                    <div class="main-left-header-icon"></div>
+                    江西省粮食生产大数据地图全貌
+                </div>
+                <div class="main-left-map">
+                    <img src="./img/map.png" style="width: 100%; height: 100%;" alt="">
+                </div>
+            </div>
+            <div class="main-right">
+                <div id="mainRightTop" class="main-right-top">
+                    <div class="main-left-header">
+                        <div class="main-left-header-icon"></div>
+                        江西省粮食生产大数据分析
+                    </div>
+                    <div class="main-right-content">
+                        <div class="main-right-bar">
+                            <div id="mainBar" style="width: 100%;height: 160px;font-size: 16px;"></div>
+                        </div>
+                        <div class="main-map-data">
+                            <div class="map-data-detail">
+                                <div class="map-data-detail-point"></div>
+                                <div class="map-data-detail-name">早稻</div>
+                                <div>38%</div>
+                            </div>
+                            <div class="map-data-detail">
+                                <div class="map-data-detail-point" style="background: #ED8B3E;"></div>
+                                <div class="map-data-detail-name">中稻</div>
+                                <div>38%</div>
+                            </div>
+                            <div class="map-data-detail">
+                                <div class="map-data-detail-point" style="background: #CF1820;"></div>
+                                <div class="map-data-detail-name">晚稻</div>
+                                <div>38%</div>
+                            </div>
+                        </div>
+                        <div class="main-map-bottom">晚稻省份：新余市 12% 赣州市 42%</div>
+                    </div>
+                </div>
+                <div id="mainTable" class="main-right-table">
+                    <div class="main-left-header">
+                        <div class="main-left-header-icon"></div>
+                        江西省粮食生产大数据分析
+                    </div>
+                    <div class="data-header data-content-header">
+                        <div>地区</div>
+                        <div>早稻(亩)</div>
+                        <div>中稻(亩)</div>
+                        <div>晚稻(亩)</div>
+                    </div>
+                    <div id="dataContent" class="data-content">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<script>
+    $(".main-tab-warp div").click(function() {
+        $(this).siblings('div').removeClass('tab-active');
+        $(this).addClass('tab-active');
+    });
+    // tab切换请求数据
+    function headerTab(val){
+        if (val === '1') {
+            // 传值不通请求数据不同
+            this.getTableData('1')
+            this.getPieData('1')
+        } else if(val === '2') {
+            this.getTableData('2')
+            this.getPieData('2')
+        } else {
+            this.getTableData('3')
+            this.getPieData('3')
+        }
+    }
+    // 圆饼图请求数据
+    function getPieData(){
+        var myChart = echarts.init(document.getElementById('mainBar'), 'light');
+        var option = {
+            color: ['#82A540','#F8B62B', '#EB6100'],
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        {value: 335, name: ''},
+                        {value: 310, name: ''},
+                        {value: 234, name: ''}
+                    ]
+                }
+            ]
+        }; 
+        myChart.setOption(option)
+        // 圆饼图下面的市
+        // var areaList = {
+        //     normal: ['鹰潭市', '赣州市', '吉安市'],
+        //     part: ['上饶市', '景德镇市'],
+        //     serious: ['南昌市', '九江市', '萍乡市', '新余市', '抚州市', '宜春市']
+        // }
+        // let normalHtml = ''
+        // let partHtml = ''
+        // let seriousHtml = ''
+        // $('#serious').html('<span class="main-right-point"></span>')
+        // $('#part').html('<span class="main-right-point" style="background: #EB6100;"></span>')
+        // $('#normal').html('<span class="main-right-point" style="background: #F8B62B;"></span>')
+        // areaList.normal.forEach(item => {
+        //     normalHtml += '<div class="right-data">'+item+'</div>'
+        // })
+        // $('#normal').append(normalHtml);
+        // areaList.part.forEach(item => {
+        //     partHtml += '<div class="right-data">'+item+'</div>'
+        // })
+        // $('#part').append(partHtml);
+        // areaList.serious.forEach(item => {
+        //     seriousHtml += '<div class="right-data">'+item+'</div>'
+        // })
+        // $('#serious').append(seriousHtml);
+    }
+    getPieData()
+    // 表格请求数据
+    getTableData()
+    function getTableData(){
+        var tableData = []
+        var tableDataStr = ''
+        tableData = [
+            {
+                adress: '南京',
+                normal: '1000',
+                part: '1000',
+                serious: '1000'
+            },
+            {
+                adress: '南京',
+                normal: '1000',
+                part: '1000',
+                serious: '1000'
+            },
+            {
+                adress: '南京',
+                normal: '1000',
+                part: '1000',
+                serious: '1000'
+            },
+            {
+                adress: '南京',
+                normal: '1000',
+                part: '1000',
+                serious: '1000'
+            },
+            {
+                adress: '南京',
+                normal: '1000',
+                part: '1000',
+                serious: '1000'
+            },
+            {
+                adress: '南京',
+                normal: '1000',
+                part: '1000',
+                serious: '1000'
+            },
+        ]
+        tableData.forEach(item => {
+            tableDataStr += '<div class="data-content-header"><div>'+item.adress+'</div><div>'+item.normal+'</div><div>'+item.part+'</div><div>'+item.serious+'</div></div>'
+        })
+        $('#dataContent').html(tableDataStr)
+    }
+    // 省选择
+    function selectProvince(){
+        if ($('#province').val() == '0') {
+            $("#city").attr("disabled", true);
+        } else {
+            $("#city").attr("disabled", false);
+        }
+    }
+    // 市选择
+    function selectCity(){
+        if ($('#city').val() == '0') {
+            $("#area").attr("disabled", true);
+        } else {
+            $("#area").attr("disabled", false);
+        }
+        // 传值请求省接口
+        // var vs = document.getElementById('city').val();
+    }
+
+    function search(){
+        // $('#province').val()
+        // $('#city').val()
+        // $('#area').val()
+        // $('#year').val()
+        // 请求接口传值就可以点击查询了
+    }
+    
+
+    // 请求模版
+    // $.ajax({
+    //     type: "get",
+    //     dataType: "Json",
+    //     url: "https://www.easy-mock.com/mock/5b868ff26c5beb191441278b/example/getList",
+    //     start: function () { alert("开始获取数据了") },
+    //     complete: function () { alert("获取完了") },
+    //     success: function (data) {
+    //         var t = eval(data); //强制转换一下json字符串，生成json对象;
+    //         var data = t.data;
+    //         $('.title').html(data.title)
+    //         var rows = t.data.rows
+    //         console.log(rows);
+    //         var html = '';
+    //         $.each(rows,function (i,item) {
+    //             html+=' <li class="li-con">\n' +
+    //                 '                <span class="number">'+item.number+'</span>\n' +
+    //                 '                <span class="content">\n' +
+    //                 '                    <span class="gray-tit">'+item.before+'</span> '+item.after+'\n' +
+    //                 '                </span>\n' +
+    //                 '                <span class="content con2">\n' +
+    //                 '                    <span class="gray-tit">'+item.before1+'</span> '+item.after1+'\n' +
+    //                 '                </span>\n' +
+    //                 '                <!--图片-->\n' +
+    //                 '                <div class="image">\n' +
+    //                 '                   index:'+i+' <img src="" alt="">\n' +
+    //                 '                </div>\n' +
+    //                 '            </li>';
+    //         })
+    //         var oContent = $('#ulBox');
+    //         // oContent.html(html);
+    //             oContent.append(html);
+    //     }
+    // });
+    // //发送post请求，获取数据
+    // $.ajax({
+    //     url : 'https://www.easy-mock.com/mock/5b868ff26c5beb191441278b/example/postList/:id',
+    //     data:{id:1},
+    //     cache : false,
+    //     async : true,//异步请求
+    //     type : "POST",
+    //     dataType : 'Json',
+    //     success : function (res){
+    //         console.log('成功');
+    //         var t = eval(res); //强制转换一下json字符串，生成json对象;
+    //         console.log(t.data);
+
+    //     }
+    // });
+    
+</script>
+</html>
