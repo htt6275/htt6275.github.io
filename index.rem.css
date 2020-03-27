@@ -1,7 +1,6 @@
 .box {
     position: relative;
     width: 100%;
-    overflow: hidden;
     background: #e5e8f0;
     box-sizing: border-box;
     font-family: Noto Sans S Chinese;
@@ -10,7 +9,7 @@
 
 .banner{
     width: 100%;
-    height: 32rem;
+    height: 4.26rem;
 }
 
 .banner img{
@@ -20,66 +19,65 @@
 
 .nav{
     width: 100%;
-    height: 8rem;
+    height: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
     color: #333;
     background:rgba(255,255,255,1);
-    box-shadow:0px 4px 10px 0px rgba(7,0,2,0.1);
+    box-shadow: 0px 4px 10px 0px rgba(7,0,2,0.1);
 }
 
 .nav-item{
-    padding: 0 2rem;
-    line-height: 8rem;
-    border-bottom: 0.3rem solid #fff;
+    padding: 0 0.2rem;
+    line-height: 1rem;
+    border-bottom: 0.06rem solid #fff;
 }
 
 .nav-active{
     color: #4767DA;
-    border-bottom: 0.3rem solid #4767DA;
+    border-bottom: 0.06rem solid #4767DA;
 }
 
 .main-warp{
-    width: 72.4rem;
-    margin: 3rem auto 0;
+    width: 100%;
+    margin: 0.4rem auto 0;
     overflow: hidden;
     background: #fff;
 }
 
 .search-header{
     width: 100%;
-    height: 7.2rem;
-    line-height: 7.2rem;
+    height: 0.96rem;
+    line-height: 0.96rem;
     background:rgba(71,103,218,1);
     color: #fff;
     font-size: 16px;
     position: relative;
-    padding-left: 3.8rem;
+    padding-left: 0.5rem;
     box-sizing: border-box;
 }
 
 .search-header::after{
     content: '';
     position: absolute;
-    left: 1.4rem;
-    top: 1.7rem;
-    width: 0.6rem;
-    height: 3.8rem;
+    left: 0.18rem;
+    top: 0.2rem;
+    width: 0.08rem;
+    height: 0.5rem;
     background: #fff;
-
 }
 
 .search-box{
-    width: 68.9rem;
+    width: 9.48rem;
     margin: 0 auto;
-    height: 27.8rem;
-    box-shadow:0px 4px 10px 0px rgba(7,0,2,0.1);
+    height: 3.7rem;
+    box-shadow: 0px 4px 10px 0px rgba(7,0,2,0.1);
 }
 
 .main-left-input{
-    width: 66.6rem;
+    width: 8.88rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -87,41 +85,40 @@
 }
 
 .main-left-input select{
-    width: 32rem;
-    height: 7rem;
+    width: 4.2rem;
+    height: 0.9rem;
     border: 1px solid #ccc;
     background: #fff;
-    margin: 2rem 0 0;
+    margin: 0.2rem 0 0;
     -webkit-appearance: none;
     appearance: none;
     font-size: 12px;
-    padding:0px 10px;
+    padding: 0px 10px;
     display:block;
     -webkit-box-sizing:border-box;
     box-sizing:border-box;
     background-color: #FFFFFF;
     color:#333333;
-    border-radius:4px;
+    border-radius: 4px;
 }
 
 .search-btn{
-    width: 66.6rem;
-    height: 7rem;
+    width: 8.88rem;
+    height: 0.9rem;
     background: rgba(71,103,218,1);
-    border-radius: 1rem;
-    margin: 2rem auto 0;
+    border-radius: 0.1rem;
+    margin: 0.2rem auto 0;
     font-size: 16px;
     font-family: Noto Sans S Chinese;
-    font-weight: 500;
     color: rgba(255,255,255,1);
-    line-height: 7rem;
+    line-height: 0.9rem;
     text-align: center;
 }
 
 .main-map{
-    width: 68.9rem;
-    margin: 0 auto 2rem;
-    height: 50rem;
+    width: 9.48rem;
+    margin: 0 auto 0.2rem;
+    height: 6.6rem;
 }
 
 .main-map img{
@@ -130,16 +127,16 @@
 }
 
 .pie-box{
-    width: 68.9rem;
+    width: 9.48rem;
     overflow: hidden;
-    margin: 0 auto 2rem;
-    padding-bottom: 2rem;
+    margin: 0 auto 0.2rem;
+    padding-bottom: 0.2rem;
     box-shadow: 0px 4px 10px 0px rgba(7,0,2,0.1);
 }
 
 .pie-data{
     width: 100%;
-    height: 39rem;
+    height: 5.2rem;
 }
 
 #mainBar div {
@@ -161,25 +158,25 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 2rem 2rem 0;
+    padding: 0.2rem 0.2rem 0;
   }
   
   .main-right-point{
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 0.16rem;
+    height: 0.16rem;
     background: rgba(130,165,64,1);
     border-radius: 50%;
-    margin-right: 2rem;
+    margin-right: 0.2rem;
     display: inline-block;
   }
   
   .right-data{
     float: left;
-    margin-right: 2.5rem;
+    margin-right: 0.3rem;
   }
 
   .main-right-table{
-      margin-bottom: 4rem;
+    margin-bottom: 0.05rem;
   }
 
   .data-content{
@@ -187,7 +184,7 @@
     box-sizing: border-box;
     overflow: scroll;
     background: #fff;
-    padding-bottom: 1rem;
+    padding-bottom: 0.1rem;
   }
   
   .data-content-header{
@@ -196,8 +193,8 @@
     font-family: Noto Sans S Chinese;
     font-weight: 400;
     color: rgba(51,51,51,1);
-    height: 7rem;
-    line-height: 7rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
     align-items: center;
     justify-content: space-between;
     background: #fff;

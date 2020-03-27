@@ -124,9 +124,7 @@
             var option = {
                 color: ['#82A540','#F8B62B', '#EB6100'],
                 tooltip: {
-                    show: false,
-                    trigger: 'item',
-                    formatter: '{a} <br/>{b}: {c} ({d}%)'
+                    show: false
                 },
                 series: [
                     {
@@ -135,13 +133,13 @@
                         radius: ['45%', '70%'],
                         avoidLabelOverlap: false,
                         label: {
-                            show: true,
-                            fontSize: '40',
+                            show: false,
+                            position: 'right'
                         },
                         emphasis: {
                             label: {
                                 show: true,
-                                fontSize: '20',
+                                fontSize: '8',
                                 fontWeight: 'bold'
                             }
                         },
