@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./common/index.css" />
     <link rel="stylesheet" href="./index.rem.css" />
     <script src="./common/index.js"></script>
-    <title>江西省粮食生产大数据平台</title>
+    <title>江西省水土保持大数据平台</title>
 </head>
 
 <body>
@@ -20,14 +20,12 @@
             <img src="./img/banner.png" alt="">
         </div>
         <div class="nav">
-            <div class="nav-item nav-active" onclick="headerTab('1')">耕地面积</div>
-            <div class="nav-item" onclick="headerTab('2')">种植制度</div>
-            <div class="nav-item" onclick="headerTab('3')">稻期统计</div>
-            <div class="nav-item" onclick="headerTab('2')">种粮大户</div>
-            <div class="nav-item" onclick="headerTab('3')">样点资料</div>
+            <div class="nav-item nav-active" onclick="headerTab('1')">水土流失</div>
+            <div class="nav-item" onclick="headerTab('2')">水土保持责任区</div>
+            <div class="nav-item" onclick="headerTab('3')">取弃土场</div>
         </div>
         <div class="main-warp">
-            <div class="search-header">江西省粮食生产大数据地图全貌</div>
+            <div class="search-header">江西省水土保持大数据分析</div>
             <div class="search-box">
                 <div class="main-left-input">
                     <select name="filter" id="province" onchange="selectProvince()">
@@ -66,17 +64,12 @@
             </div>
         </div>
         <div class="main-warp">
-            <div class="search-header">江西省粮食生产大数据分析</div>
+            <div class="search-header">江西省水土保持大数据分析</div>
             <div class="pie-box">
                 <div class="pie-data" >
-                    <div id="mainBar" style="width: 100%;height: 100%;font-size: 16px;margin: 0 auto;"></div>
+                    <div id="mainBar" style="width: 100%;height: 100%;font-size: 16px;"></div>
                 </div>
-                <div class="pie-data-detail">
-                    <div>晚稻省份:</div>
-                    <div>新余市 12%</div>
-                    <div>赣州市 42%</div>
-                </div>
-                <!-- <div class="main-right-data" id="serious">
+                <div class="main-right-data" id="serious">
                     <span class="main-right-point"></span>
                 </div>
                 <div class="main-right-data" id="normal">
@@ -84,16 +77,16 @@
                 </div>
                 <div class="main-right-data" id="part">
                     <span class="main-right-point" style="background: #EB6100;"></span>
-                </div> -->
+                </div>
             </div>
         </div>
         <div id="mainTable" class="main-warp main-right-table">
-            <div class="search-header">江西省粮食生产大数据分析</div>
-            <div class="data-content-header data-header">
+            <div class="search-header">江西省水土保持大数据分析</div>
+            <div class="data-content-header">
                 <div>地区</div>
-                <div>早稻(亩)</div>
-                <div>中稻(亩)</div>
-                <div>晚稻(亩)</div>
+                <div>正常</div>
+                <div>部门</div>
+                <div>严重</div>
             </div>
             <div id="dataContent" class="data-content">
                 
@@ -104,7 +97,7 @@
     </div>
 </body>
 <!-- jQuery -->
-<script src="./js/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
 <script>
         $(".nav div").click(function() {
@@ -137,13 +130,13 @@
                 },
                 series: [
                     {
-                        name: '江西粮食',
+                        name: '江西水土',
                         type: 'pie',
                         radius: ['45%', '70%'],
                         avoidLabelOverlap: false,
                         label: {
                             show: true,
-                            fontSize: '20',
+                            fontSize: '40',
                         },
                         emphasis: {
                             label: {
@@ -156,14 +149,38 @@
                             show: true
                         },
                         data: [
-                            {value: 335, name: '晚稻'},
-                            {value: 310, name: '中稻'},
-                            {value: 234, name: '早稻'}
+                            {value: 335, name: '严重地区'},
+                            {value: 310, name: '正常地区'},
+                            {value: 234, name: '部分地区'}
                         ]
                     }
                 ]
             }; 
             myChart.setOption(option)
+            // 圆饼图下面的市
+            var areaList = {
+                normal: ['鹰潭市', '赣州市', '吉安市'],
+                part: ['上饶市', '景德镇市'],
+                serious: ['南昌市', '九江市', '萍乡市', '新余市', '抚州市', '宜春市']
+            }
+            let normalHtml = ''
+            let partHtml = ''
+            let seriousHtml = ''
+            $('#serious').html('<span class="main-right-point"></span>')
+            $('#part').html('<span class="main-right-point" style="background: #EB6100;"></span>')
+            $('#normal').html('<span class="main-right-point" style="background: #F8B62B;"></span>')
+            areaList.normal.forEach(item => {
+                normalHtml += '<div class="right-data">'+item+'</div>'
+            })
+            $('#normal').append(normalHtml);
+            areaList.part.forEach(item => {
+                partHtml += '<div class="right-data">'+item+'</div>'
+            })
+            $('#part').append(partHtml);
+            areaList.serious.forEach(item => {
+                seriousHtml += '<div class="right-data">'+item+'</div>'
+            })
+            $('#serious').append(seriousHtml);
         }
         getPieData()
         window.addEventListener("resize", function() {

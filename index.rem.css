@@ -20,26 +20,25 @@
 
 .nav{
     width: 100%;
-    overflow: hidden;
+    height: 8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 13px;
+    font-size: 16px;
     color: #333;
-    box-sizing: border-box;
-    padding: 0 1.5rem;
     background:rgba(255,255,255,1);
-    box-shadow: 0px 4px 10px 0px rgba(7,0,2,0.1);
+    box-shadow:0px 4px 10px 0px rgba(7,0,2,0.1);
 }
 
 .nav-item{
+    padding: 0 2rem;
     line-height: 8rem;
     border-bottom: 0.3rem solid #fff;
 }
 
 .nav-active{
-    color: #538C47;
-    border-bottom: 0.3rem solid #538C47;
+    color: #4767DA;
+    border-bottom: 0.3rem solid #4767DA;
 }
 
 .main-warp{
@@ -53,7 +52,7 @@
     width: 100%;
     height: 7.2rem;
     line-height: 7.2rem;
-    background:#538C47;
+    background:rgba(71,103,218,1);
     color: #fff;
     font-size: 16px;
     position: relative;
@@ -108,7 +107,7 @@
 .search-btn{
     width: 66.6rem;
     height: 7rem;
-    background: #538C47;
+    background: rgba(71,103,218,1);
     border-radius: 1rem;
     margin: 2rem auto 0;
     font-size: 16px;
@@ -134,13 +133,13 @@
     width: 68.9rem;
     overflow: hidden;
     margin: 0 auto 2rem;
+    padding-bottom: 2rem;
     box-shadow: 0px 4px 10px 0px rgba(7,0,2,0.1);
 }
 
 .pie-data{
     width: 100%;
     height: 39rem;
-    box-shadow: 0px 4px 10px 0px rgba(7,0,2,0.1);
 }
 
 #mainBar div {
@@ -153,21 +152,9 @@
     height: 100% !important;
 }
 
-.pie-data-detail{
-    margin-top: 2rem;
-    width: 100%;
-    padding: 0 3rem;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    height: 8.6rem;
-    line-height: 8.6rem;
-    font-size: 14px;
-}
-
 .main-right-data{
     width: 100%;
-    font-size: 14px;
+    font-size: 11px;
     font-family: Noto Sans S Chinese;
     font-weight: 400;
     color: rgba(51,51,51,1);
@@ -224,7 +211,6 @@
     width: 25%;
     text-align: center;
   }
-
 
 
 
