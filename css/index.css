@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #001734;
+  font-family: Noto Sans S Chinese;
+}
+
+.page-wrap {
+  max-width: 1920px;
+  min-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  overflow-x: auto;
+  position: relative;
+}
+
+.header-warp{
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1200px;
+  height: 1rem;
+  background: url(../img/nav-bg.png) no-repeat center;
+  background-size: 100% 100%;
+  color: #00E3FF;
+}
+
+.header-title{
+  width: 24%;
+  font-size: 0.28rem;
+  line-height: 1rem;
+  margin-left: 0.2rem;
+  font-weight: 500;
+  float: left;
+  cursor: pointer;
+}
+
+.header-logo{
+  width: 0.8rem;
+  margin: 0.1rem;
+  float: left;
+  vertical-align: middle;
+}
+
+.header-tab{
+  width: 54%;
+  line-height: 0.6rem;
+  float: left;
+  font-size: 0.22rem;
+}
+
+.header-tab-content{
+  width: 0.8rem;
+  text-align: center;
+  float: left;
+  margin: 0 0.4rem;
+  cursor: pointer;
+}
+
+.tab-active{
+  color: #F8B62B;
+  border-bottom: 0.04rem solid #F8B62B;
+}
+
+.header-info{
+  float: right;
+}
+
+.header-info-login{
+  width: 1.5rem;
+  line-height: 0.6rem;
+  font-size: 0.20rem;
+  float: left;
+  cursor: pointer;
+}
+
+.header-info-login-icon{
+  width: 0.3rem;
+  margin-right: 0.08rem;
+  vertical-align: middle;
+}
+.header-info-login-icon1{
+  width: 0.25rem;
+}
+
+.main-warp{
+  width: 100%;
+  position: absolute;
+  top: 1rem;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 0.1rem 0.2rem;
+}
+
+.main-menu{
+  position: absolute;
+  width: 210px;
+  top: 10px;
+  bottom: 0;
+  left: 15px;
+  right: 0;
+  font-size: 0.18rem;
+  font-weight: 500;
+  color: #00E3FF;
+  background: #031a44;
+  padding-top: 15px;
+}
+
+.main-menu-item{
+  width: 100%;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  cursor: pointer;
+}
+
+.main-menu-item img{
+  float: left;
+  width: 0.22rem;
+  height: 0.22rem;
+  margin: 0.19rem 10px 0 40px;
+}
+
+.main-menu-item-active{
+  color: #F8B62B;
+}
+
+.main-center{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 220px;
+  right: 220px;
+  box-sizing: border-box;
+}
+
+.main-center-map{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-right{
+  position: absolute;
+  right: 15px;
+  width: 210px;
+  top: 10px;
+  bottom: 0;
+  color: #00E3FF;
+  background: #031a44;
+}
+
+.main-right-header{
+  width: 100%;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  background: #024268;
+  font-size: 0.2rem;
+  font-family: Noto Sans S Chinese;
+  font-weight: 500;
+  color: #00E3FF;
+}
+
+.main-right-header-icon{
+  width: 0.06rem;
+  height: 0.28rem;
+  float: left;
+  margin: 0.16rem 0.2rem;
+  background: #FF8C00;
+}
+
+.main-right-data{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.6rem;
+  bottom: 0;
+  font-size: 0.18rem;
+  color: #00E1FF;
+}
+
+.main-right-data .list-group-item{
+  color: #00E3FF;
+  background: #031a44;
+  border: 0;
+  font-family: Noto Sans S Chinese;
+}
+.main-bottom {
+  width: 32%;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url(../img/bottom-bg.png) no-repeat center;
+  background-size: 100% 100%;
+  color: #fff;
+  font-size: 0.16rem;
+  text-align: center;
+}

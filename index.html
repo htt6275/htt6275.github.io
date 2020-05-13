@@ -1,37 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Shaw">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no, email=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <link rel="stylesheet" href="./common/index.css" />
-    <link rel="stylesheet" href="./index.rem.css" />
-    <script src="./common/index.js"></script>
-    <title>江西省水土保持大数据展示系统</title>
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css">
+    <title>HTML5</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function handleCalc() {
+                var dw = document.body.clientWidth;
+                var minScale = dw / 1920;
+                if (minScale < 1200 / 1920) {
+                    minScale = 1200 / 1920;
+                } else if (minScale > 1) {
+                    minScale = 1;
+                }
+                document.documentElement.style.fontSize = (minScale * 100) + 'px';
+            }
+            handleCalc();
+            myChart.resize();
+            window.addEventListener('resize', handleCalc);
+        });
+    </script>
 </head>
 
 <body>
-    <div class="login-warp">
-        <div class="login-box">
-            <div class="login-title">江西省水土保持大数据展示系统</div>
-            <div class="login-content">
-                <div class="login-icon">
-                </div>
-                <input class="login-input" type="text" placeholder="请输入账号">
+    <div class="page-wrap">
+        <div class="header-warp" id="headerWarp">
+            <div class="header-title">丽水渔业大数据可视化管理系统</div>
+            <div class="header-tab">
+                <div class="header-tab-content tab-active" onclick="headerTab('1')">专题</div>
+                <div class="header-tab-content" onclick="headerTab('2')">查询</div>
+                <div class="header-tab-content" onclick="headerTab('3')">统计</div>
+                <div class="header-tab-content" onclick="headerTab('4')">标注</div>
+                <div class="header-tab-content" onclick="headerTab('5')">传感器</div>
+                <div class="header-tab-content" onclick="headerTab('6')">工具箱</div>
             </div>
-            <div class="login-content">
-                <div class="login-icon password-icon">
-                </div>
-                <input class="login-input" type="password" placeholder="请输入密码">
+            <div class="header-info">
+                <div class="header-info-login"><img class="header-info-login-icon" src="./img/nav-icon1.png"/>影像源</div>
+                <div class="header-info-login"><img class="header-info-login-icon header-info-login-icon1" src="./img/nav-icon2.png"/>关于</div>
             </div>
-            <div class="login-btn">登录</div>
         </div>
+        <div id="mainWarp" class="main-warp">
+            <div class="main-menu">
+                <div class="main-menu-item main-menu-item-active">
+                    <img src="./img/fish-select-icon.png" alt="">
+                    丽水渔业专题
+                </div>
+                <div class="main-menu-item">
+                    <img src="./img/farm-icon.png" alt="">
+                    丽水农业专题
+                </div>
+                <div class="main-menu-item">
+                    <img src="./img/forestry-icon.png" alt="">
+                    丽水林业专题
+                </div>
+            </div>
+            <div class="main-center">
+                <div class="main-center-map">
+                    <img src="./img/map.png" style="width: 60%;" alt="">
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="main-right-header">
+                    <div class="main-right-header-icon"></div>
+                    数据概览
+                </div>
+                <div class="main-right-data">
+                    <div id="tree"></div> 
+                </div>
+
+                <!-- <div id="mainRightTop" class="main-right-top">
+                    <div class="main-left-header">
+                        <div class="main-left-header-icon"></div>
+                        江西省水土保持大数据分析
+                    </div>
+                    <div class="main-right-content">
+                        <div class="main-right-bar">
+                            <div id="mainBar" style="width: 100%;height: 100%;"></div>
+                        </div>
+                        <div class="main-right-data" id="serious">
+                            <span class="main-right-point"></span>
+                        </div>
+                        <div class="main-right-data" id="normal">
+                            <span class="main-right-point" style="background: #F8B62B;"></span>
+                        </div>
+                        <div class="main-right-data" id="part">
+                            <span class="main-right-point" style="background: #EB6100;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="mainTable" class="main-right-table">
+                    <div class="main-left-header">
+                        <div class="main-left-header-icon"></div>
+                        江西省水土保持大数据分析
+                    </div>
+                    <div class="data-header data-content-header">
+                        <div>地区</div>
+                        <div>正常</div>
+                        <div>部门</div>
+                        <div>严重</div>
+                    </div>
+                    <div id="dataContent" class="data-content">
+                        
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="main-bottom">东经：33.24° 北纬：28.24° 海拔：208米 视角海拔高度：124514米 </div>
     </div>
 </body>
-<!-- jQuery -->
-<script src="./js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+<script src="http://www.jq22.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/bootstrap-treeview.js"></script>
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<script>
+    var treeData = [{
+            text: "Parent 1",
+            nodes: [{
+                text: "Child 1",
+                nodes: [{
+                    text: "Grandchild 1"
+                }, {
+                    text: "Grandchild 2",
+                    nodes: [{
+                        text: "Grandchild 2-1",
+                        nodes: [{
+                            text: "Grandchild 2-1-1"
+                        }, {
+                            text: "Grandchild 2-2-1",
+                        }]
+                    }, {
+                        text: "Grandchild 1-2",
+                    }]
+                }]
+            }, {
+                text: "Child 2",
+                nodes: [{
+                    text: "Grandchild 2-1"
+                }, {
+                    text: "Grandchild 2-2",
+                }]
+            }]
+        }, {
+            text: "Parent 2",
+            id:'11111'
+        }, {
+            text: "Parent 3"
+        }, {
+            text: "Parent 4"
+        }, {
+            text: "Parent 5"
+        }];       
+    // $('#tree').treeview({
+    //     data: treeData, 
+    //     showCheckbox: true,
+    //     onhoverColor: "#FF8A00",
+    //     selectedColor: "#FF8A00",//设置选定节点的前景色
+    //     selectedBackColor: "#024268",//设置选定节点的背景色
+    //     state: {
+    //         checked: true,
+    //         disabled: true,
+    //         expanded: true,
+    //         selected: true
+    //     },        // data is not optional
+    //     levels: 5,
+    // });  
+    var $checkableTree = $('#tree').treeview({
+        data: treeData,
+        showIcon: false,
+        showCheckbox: true,
+        onhoverColor: "#FF8A00",
+        selectedColor: "#FF8A00",//设置选定节点的前景色
+        selectedBackColor: "#024268",//设置选定节点的背景色
+        onNodeChecked: function(event, node) {
+        $('#checkable-output').prepend('<p>' + node.text + ' was checked</p>');
+        },
+        onNodeUnchecked: function (event, node) {
+        $('#checkable-output').prepend('<p>' + node.text + ' was unchecked</p>');
+        }
+    });
+
+
+
+    $(".header-tab div").click(function() {
+        $(this).siblings('div').removeClass('tab-active');
+        $(this).addClass('tab-active');
+    });
+    // tab切换请求数据
+    function headerTab(val){
+        if (val === '1') {
+            // 传值不通请求数据不同
+            this.getTableData('1')
+            this.getPieData('1')
+        } else if(val === '2') {
+            this.getTableData('2')
+            this.getPieData('2')
+        } else {
+            this.getTableData('3')
+            this.getPieData('3')
+        }
+    }
+
+    // 请求模版
+    // $.ajax({
+    //     type: "get",
+    //     dataType: "Json",
+    //     url: "https://www.easy-mock.com/mock/5b868ff26c5beb191441278b/example/getList",
+    //     start: function () { alert("开始获取数据了") },
+    //     complete: function () { alert("获取完了") },
+    //     success: function (data) {
+    //         var t = eval(data); //强制转换一下json字符串，生成json对象;
+    //         var data = t.data;
+    //         $('.title').html(data.title)
+    //         var rows = t.data.rows
+    //         console.log(rows);
+    //         var html = '';
+    //         $.each(rows,function (i,item) {
+    //             html+=' <li class="li-con">\n' +
+    //                 '                <span class="number">'+item.number+'</span>\n' +
+    //                 '                <span class="content">\n' +
+    //                 '                    <span class="gray-tit">'+item.before+'</span> '+item.after+'\n' +
+    //                 '                </span>\n' +
+    //                 '                <span class="content con2">\n' +
+    //                 '                    <span class="gray-tit">'+item.before1+'</span> '+item.after1+'\n' +
+    //                 '                </span>\n' +
+    //                 '                <!--图片-->\n' +
+    //                 '                <div class="image">\n' +
+    //                 '                   index:'+i+' <img src="" alt="">\n' +
+    //                 '                </div>\n' +
+    //                 '            </li>';
+    //         })
+    //         var oContent = $('#ulBox');
+    //         // oContent.html(html);
+    //             oContent.append(html);
+    //     }
+    // });
+    // //发送post请求，获取数据
+    // $.ajax({
+    //     url : 'https://www.easy-mock.com/mock/5b868ff26c5beb191441278b/example/postList/:id',
+    //     data:{id:1},
+    //     cache : false,
+    //     async : true,//异步请求
+    //     type : "POST",
+    //     dataType : 'Json',
+    //     success : function (res){
+    //         console.log('成功');
+    //         var t = eval(res); //强制转换一下json字符串，生成json对象;
+    //         console.log(t.data);
+
+    //     }
+    // });
+    
+</script>
 </html>
