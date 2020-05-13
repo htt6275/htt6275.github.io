@@ -23,8 +23,6 @@ body, html {
 
 .header-warp{
   width: 100%;
-  max-width: 1920px;
-  min-width: 1200px;
   height: 1rem;
   background: url(../img/nav-bg.png) no-repeat center;
   background-size: 100% 100%;
@@ -32,12 +30,12 @@ body, html {
 }
 
 .header-title{
-  width: 24%;
-  font-size: 0.28rem;
+  width: 23%;
+  font-size: 22px;
   line-height: 1rem;
-  margin-left: 0.2rem;
   font-weight: 500;
   float: left;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -49,18 +47,23 @@ body, html {
 }
 
 .header-tab{
-  width: 54%;
   line-height: 0.6rem;
   float: left;
-  font-size: 0.22rem;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .header-tab-content{
-  width: 0.8rem;
+  width: 1rem;
+  overflow: hidden;
   text-align: center;
   float: left;
-  margin: 0 0.4rem;
+  margin: 0 0.3rem;
   cursor: pointer;
+}
+
+.header-tab-content:hover{
+  color: #F8B62B;
 }
 
 .tab-active{
@@ -73,20 +76,24 @@ body, html {
 }
 
 .header-info-login{
-  width: 1.5rem;
+  width: 1.2rem;
   line-height: 0.6rem;
-  font-size: 0.20rem;
+  font-size: 16px;
   float: left;
   cursor: pointer;
 }
 
-.header-info-login-icon{
-  width: 0.3rem;
-  margin-right: 0.08rem;
-  vertical-align: middle;
+.header-info-login:nth-child(1){
+  margin-right: 10px;
 }
-.header-info-login-icon1{
-  width: 0.25rem;
+
+.header-info-login:hover{
+  color: #F8B62B;
+}
+
+.header-info-login .iconfont{
+  font-size: 20px;
+  margin-right: 5px;
 }
 
 .main-warp{
@@ -102,41 +109,48 @@ body, html {
 
 .main-menu{
   position: absolute;
-  width: 210px;
+  display: none;
+  width: 160px;
   top: 10px;
   bottom: 0;
   left: 15px;
   right: 0;
-  font-size: 0.18rem;
+  font-size: 14px;
   font-weight: 500;
   color: #00E3FF;
   background: #031a44;
   padding-top: 15px;
+  padding-right: 5px;
 }
 
 .main-menu-item{
   width: 100%;
-  height: 0.6rem;
-  line-height: 0.6rem;
+  height: 50px;
+  line-height: 50px;
   cursor: pointer;
+  text-align: center;
 }
 
-.main-menu-item img{
-  float: left;
-  width: 0.22rem;
-  height: 0.22rem;
-  margin: 0.19rem 10px 0 40px;
+.main-menu-item .iconfont{
+  font-size: 20px;
 }
 
 .main-menu-item-active{
   color: #F8B62B;
 }
 
+.main-menu-tool{
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #0000FF;
+}
+
+
 .main-center{
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 220px;
+  left: 170px;
   right: 220px;
   box-sizing: border-box;
 }
@@ -147,6 +161,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .main-right{
   position: absolute;
@@ -156,6 +171,7 @@ body, html {
   bottom: 0;
   color: #00E3FF;
   background: #031a44;
+  display: none;
 }
 
 .main-right-header{
@@ -163,7 +179,7 @@ body, html {
   height: 0.6rem;
   line-height: 0.6rem;
   background: #024268;
-  font-size: 0.2rem;
+  font-size: 14px;
   font-family: Noto Sans S Chinese;
   font-weight: 500;
   color: #00E3FF;
@@ -171,9 +187,9 @@ body, html {
 
 .main-right-header-icon{
   width: 0.06rem;
-  height: 0.28rem;
+  height: 0.24rem;
   float: left;
-  margin: 0.16rem 0.2rem;
+  margin: 0.18rem 0.2rem;
   background: #FF8C00;
 }
 
@@ -183,15 +199,15 @@ body, html {
   right: 0;
   top: 0.6rem;
   bottom: 0;
-  font-size: 0.18rem;
   color: #00E1FF;
 }
 
-.main-right-data .list-group-item{
+.main-right-data .ztree li span {
   color: #00E3FF;
   background: #031a44;
   border: 0;
   font-family: Noto Sans S Chinese;
+  font-size: 12px;
 }
 .main-bottom {
   width: 32%;
@@ -203,6 +219,22 @@ body, html {
   background: url(../img/bottom-bg.png) no-repeat center;
   background-size: 100% 100%;
   color: #fff;
-  font-size: 0.16rem;
+  font-size: 12px;
   text-align: center;
 }
+
+::-webkit-scrollbar-track-piece { 
+  background-color:#f8f8f8;
+  }
+  ::-webkit-scrollbar {
+  width:9px;
+  height:9px;
+  }
+  ::-webkit-scrollbar-thumb {
+  background-color:#dddddd;
+  background-clip:padding-box;
+  min-height:28px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+  background-color:#bbb;
+  }
