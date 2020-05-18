@@ -1,236 +1,127 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Shaw">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no, email=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./fonts/iconfont.css">
-    <link rel="stylesheet" href="./css/zTreeStyle.css" type="text/css">
-    <title>HTML5</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function handleCalc() {
-                var dw = document.body.clientWidth;
-                var minScale = dw / 1920;
-                if (minScale < 1200 / 1920) {
-                    minScale = 1200 / 1920;
-                } else if (minScale > 1) {
-                    minScale = 1;
-                }
-                document.documentElement.style.fontSize = (minScale * 100) + 'px';
-            }
-            handleCalc();
-            window.addEventListener('resize', handleCalc);
-        });
-    </script>
+    <link rel="stylesheet" href="./common/index.css" />
+    <link rel="stylesheet" href="./index.rem.css" />
+    <script src="./common/index.js"></script>
+    <title>一只猫</title>
 </head>
 
 <body>
     <div class="page-wrap">
-        <div class="header-warp" id="headerWarp">
-            <div class="header-title">丽水渔业大数据可视化管理系统</div>
-            <div class="header-tab" id="header-tab">
-                <div class="header-tab-content" onclick="headerTab('1')">专题</div>
-                <div class="header-tab-content" onclick="headerTab('2')">查询</div>
-                <div class="header-tab-content" onclick="headerTab('3')">统计</div>
-                <div class="header-tab-content" onclick="headerTab('4')">标注</div>
-                <div class="header-tab-content" onclick="headerTab('5')">传感器</div>
-                <div class="header-tab-content" onclick="headerTab('6')">工具箱</div>
-            </div>
-            <div class="header-info" id="header-info">
-                <div class="header-info-login"><i class="iconfont icon-yingxiangsheying-"></i>影像源</div>
-                <div class="header-info-login"><i class="iconfont icon-dengpao"></i>关于</div>
+        <div class="banner-warp">
+            <div class="banner-box">
             </div>
         </div>
-        <div id="mainWarp" class="main-warp">
-            <div class="main-menu">
-                <div class="main-menu-list" id="main-menu-list">
-                    <div class="main-menu-item main-menu-item-active">
-                        <i class="iconfont icon-yuyeyangzhishuiyupiliangluru"></i>
-                        丽水渔业专题
-                    </div>
-                    <div class="main-menu-item">
-                        <i class="iconfont icon-nongye"></i>
-                        丽水农业专题
-                    </div>
-                    <div class="main-menu-item">
-                        <i class="iconfont icon-zaixianquhao"></i>
-                        丽水林业专题
-                    </div>
+        <div class="main-warp">
+            <div class="main-box">
+                <p class="main-step1-title"></p>
+                <p class="main-step1-info">一只猫影视是全新的视频标准<br>体验更高清，更流畅，更省宽带
+                </p>
+                <img class="main-step1-img" src="./img/main-step1-img.png" alt="">
+                <div class="main-step1-box">
+                    <dl class="main-step1-dl">
+                        <dt>
+                            <img src="./img/main-step1-img1.png" alt="">
+                            更高清</dt>
+                        <dd>文件大小相同时，较现有H.264清晰度提高一倍</dd>
+                    </dl>
+                    <dl class="main-step1-dl">
+                        <dt>
+                            <img src="./img/main-step1-img2.png" alt="">
+                            更流畅</dt>
+                        <dd>带宽相同时，较现有H.264缓冲速度快一倍</dd>
+                    </dl>
+                    <dl class="main-step1-dl">
+                        <dt>
+                            <img src="./img/main-step1-img3.png" alt="">
+                            更省带宽</dt>
+                        <dd>清晰度相同时，较现有H.264文件更小，更省带宽</dd>
+                    </dl>
                 </div>
-                <!-- <div class="main-menu-tool">
-                    <div class="main-menu-tool-item">
-                        <p>地形测量</p>
+                <p class="main-step2-title"></p>                
+                <p class="main-step-border"></p>
+                <div class="main-step2-box">
+                    <dl>
+                        <dt>
+                            <img class="main-step2-pic" src="./img/main-step2-pic.jpg" alt="">
+                            <img class="main-step2-icon" src="./img/main-step2-icon.png" alt="">
+                        </dt>
+                        <dd>
+                            大神猴1降妖篇
+                            <p>电影讲述了集人间怨气电影讲述了集人间怨气</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img class="main-step2-pic" src="./img/main-step2-pic.jpg" alt="">
+                            <img class="main-step2-icon" src="./img/main-step2-icon.png" alt="">
+                        </dt>
+                        <dd>
+                            大神猴1降妖篇
+                            <p>电影讲述了集人间怨气电影讲述了集人间怨气</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img class="main-step2-pic" src="./img/main-step2-pic.jpg" alt="">
+                            <img class="main-step2-icon" src="./img/main-step2-icon.png" alt="">
+                        </dt>
+                        <dd>
+                            大神猴1降妖篇
+                            <p>电影讲述了集人间怨气电影讲述了集人间怨气</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img class="main-step2-pic" src="./img/main-step2-pic.jpg" alt="">
+                            <img class="main-step2-icon" src="./img/main-step2-icon.png" alt="">
+                        </dt>
+                        <dd>
+                            大神猴1降妖篇
+                            <p>电影讲述了集人间怨气电影讲述了集人间怨气</p>
+                        </dd>
+                    </dl>
+                </div>
+                <p class="main-step3-title"></p>  
+                <div class="main-step3-box">
+                    <img class="main-step3-img1" src="./img/main-step3-img1.png" alt="">
+                    <img class="main-step3-img2" src="./img/main-step3-img2.png" alt="">
+                </div>   
+                <p class="main-step4-title"></p>
+                <div class="main-step4-box">
+                    <img class="main-step4-img" src="./img/main-step4-img.png" alt="">
+                </div>
+                <p class="main-step5-title"></p>
+                <div class="main-step5-box">
+                    <div class="main-step5-box-left">
+                        <img src="./img/main-step5-img.png" alt="">
+                        <p>如遇APP无法打开<br>请卸载重新安装</p>
                     </div>
-                </div> -->
-            </div>
-            <div class="main-center">
-                <div class="main-center-map">
-                    <img src="./img/map.png" style="width: 60%;" alt="">
-                    <!-- <iframe src="iframe.html" width="100%" height="100%" scrolling="no" marginheight="0" marginwidth="0"></iframe> -->
+                    <img class="main-step5-phone" src="./img/main-step5-phone.png" alt="">
                 </div>
-            </div>
-            <div class="main-right">
-                <div class="main-right-header">
-                    <div class="main-right-header-icon"></div>
-                    数据概览
-                </div>
-                <div class="main-right-data">
-                    <ul id="treeDemo" class="ztree"></ul>
+                <div class="bottom-warp">
+                    <p class="bottom-info">版本1.1.0.1 大小16.3M</p>
+                    <div class="bottom-btn">
+                        <img src="./img/bottom-btn.png" alt="">
+                        <span>苹果客户端下载</span>
+                    </div>
+                    <div class="bottom-btn bottom-btn1">
+                        <img src="./img/bottom-btn1.png" alt="">
+                        <span>安卓客户端下载</span>
+                    </div>
+                    <p class="bottom-info2">注册邀请码：7HHHA4</p>
                 </div>
             </div>
         </div>
-        <div class="main-bottom">东经：33.24° 北纬：28.24° 海拔：208米 视角海拔高度：124514米 </div>
     </div>
 </body>
-<script type="text/javascript" src="./js/jquery.min.js"></script>
-<script type="text/javascript" src="./js/jquery.ztree.core.js"></script>
-<script type="text/javascript" src="./js/jquery.ztree.excheck.js"></script>
-<script>
-    var setting = {
-        check: {
-            enable: true
-        },
-        data: {
-            simpleData: {
-                enable: true
-            }
-        }
-    };
-
-    var zNodes =[
-        { id:1, pId:0, name:"随意勾选1", open:true},
-        { id:11, pId:1, name:"随意勾选 1-1", open:true},
-        { id:111, pId:11, name:"随意勾选 1-1-1"},
-        { id:112, pId:11, name:"随意勾选 1-1-2"},
-        { id:12, pId:1, name:"随意勾选 1-2", open:true},
-        { id:121, pId:12, name:"随意勾选 1-2-1"},
-        { id:122, pId:12, name:"随意勾选 1-2-2"},
-        { id:2, pId:0, name:"随意勾选 2", checked:true, open:true},
-        { id:21, pId:2, name:"随意勾选 2-1"},
-        { id:22, pId:2, name:"随意勾选 2-2", open:true},
-        { id:221, pId:22, name:"随意勾选 2-2-1", checked:true},
-        { id:222, pId:22, name:"随意勾选 2-2-2"},
-        { id:23, pId:2, name:"随意勾选 2-3"}
-    ];
-    
-    var code;
-    
-    function setCheck() {
-        var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
-        py = $("#py").attr("checked")? "p":"",
-        sy = $("#sy").attr("checked")? "s":"",
-        pn = $("#pn").attr("checked")? "p":"",
-        sn = $("#sn").attr("checked")? "s":"",
-        type = { "Y":py + sy, "N":pn + sn};
-        zTree.setting.check.chkboxType = type;
-        showCode('setting.check.chkboxType = { "Y" : "' + type.Y + '", "N" : "' + type.N + '" };');
-    }
-    function showCode(str) {
-        if (!code) code = $("#code");
-        code.empty();
-        code.append("<li>"+str+"</li>");
-    }
-    
-    $(document).ready(function(){
-        $.fn.zTree.init($("#treeDemo"), setting, zNodes);
-        setCheck();
-        $("#py").bind("change", setCheck);
-        $("#sy").bind("change", setCheck);
-        $("#pn").bind("change", setCheck);
-        $("#sn").bind("change", setCheck);
-    });
-
-    
-    $("#main-menu-list div").click(function() {
-        $(this).siblings('div').removeClass('main-menu-item-active');
-        $(this).addClass('main-menu-item-active');  
-    });
-
-
-    $("#header-tab div").click(function() {
-        if($(this).hasClass('tab-active')){
-            $(this).removeClass('tab-active');
-            $(".main-menu").css('display','none');
-            $(".main-right").css('display','none');
-        } else {
-            $(this).siblings('div').removeClass('tab-active');
-            $(this).addClass('tab-active');
-            $(".main-menu").css('display','block');
-            $(".main-right").css('display','block');
-        }
-        $("#header-info div").removeClass('tab-active')
-    });
-    $("#header-info div").click(function() {
-        if($(this).hasClass('tab-active')){
-            $(this).removeClass('tab-active');
-            $(".main-menu").css('display','none');
-            $(".main-right").css('display','none');
-        } else {
-            $(this).siblings('div').removeClass('tab-active');
-            $(this).addClass('tab-active');
-            $(".main-menu").css('display','none');
-            $(".main-right").css('display','none');
-        }
-        $("#header-tab div").removeClass('tab-active')
-    });
-    function headerTab(val) {
-    };
-    // 请求模版
-    // $.ajax({
-    //     type: "get",
-    //     dataType: "Json",
-    //     url: "https://www.easy-mock.com/mock/5b868ff26c5beb191441278b/example/getList",
-    //     start: function () { alert("开始获取数据了") },
-    //     complete: function () { alert("获取完了") },
-    //     success: function (data) {
-    //         var t = eval(data); //强制转换一下json字符串，生成json对象;
-    //         var data = t.data;
-    //         $('.title').html(data.title)
-    //         var rows = t.data.rows
-    //         console.log(rows);
-    //         var html = '';
-    //         $.each(rows,function (i,item) {
-    //             html+=' <li class="li-con">\n' +
-    //                 '                <span class="number">'+item.number+'</span>\n' +
-    //                 '                <span class="content">\n' +
-    //                 '                    <span class="gray-tit">'+item.before+'</span> '+item.after+'\n' +
-    //                 '                </span>\n' +
-    //                 '                <span class="content con2">\n' +
-    //                 '                    <span class="gray-tit">'+item.before1+'</span> '+item.after1+'\n' +
-    //                 '                </span>\n' +
-    //                 '                <!--图片-->\n' +
-    //                 '                <div class="image">\n' +
-    //                 '                   index:'+i+' <img src="" alt="">\n' +
-    //                 '                </div>\n' +
-    //                 '            </li>';
-    //         })
-    //         var oContent = $('#ulBox');
-    //         // oContent.html(html);
-    //             oContent.append(html);
-    //     }
-    // });
-    // //发送post请求，获取数据
-    // $.ajax({
-    //     url : 'https://www.easy-mock.com/mock/5b868ff26c5beb191441278b/example/postList/:id',
-    //     data:{id:1},
-    //     cache : false,
-    //     async : true,//异步请求
-    //     type : "POST",
-    //     dataType : 'Json',
-    //     success : function (res){
-    //         console.log('成功');
-    //         var t = eval(res); //强制转换一下json字符串，生成json对象;
-    //         console.log(t.data);
-
-    //     }
-    // });
-    
-</script>
+<script src="./js/jquery.min.js"></script>
 </html>
