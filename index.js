@@ -34,7 +34,7 @@ class product {
         this.renderer.setSize(this.width, this.height)
         this.renderer.render(this.scene, this.camera)
         // 修改网页颜色
-        this.renderer.setClearColor("red")
+        this.renderer.setClearColor("#eeefef")
     }
 
 
@@ -86,4 +86,4 @@ class product {
 }
 
 
-new product("webgl", innerWidth, innerHeight*0.8)
+new product("webgl", innerWidth, innerHeight)
