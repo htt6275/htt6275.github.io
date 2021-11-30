@@ -1,1 +1,108 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><title>RAINbow</title><link href=./static/css/app.f856724118f064d0fb6f3b2f0a38aac6.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.3ad1d5771e9b13dbdad2.js></script><script type=text/javascript src=./static/js/vendor.29407c4af23c3b6fe4ef.js></script><script type=text/javascript src=./static/js/app.34715d5330e1cdb19a07.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" href="./common/index.css" />
+    <link rel="stylesheet" href="./index.rem.css" />
+    <link rel="stylesheet" href="./common/swiper.css" />
+    <script src="./common/index.js"></script>
+    <title>自会</title>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img1.jpg" alt="">
+                <img class="index-icon1" src="./img/index_icon1.png" alt="">
+                <img class="index-icon2" src="./img/index_icon2.png" alt="">
+                <img class="index-icon3" src="./img/index_bottom7.png" alt="">
+                <div class="index-bottom">
+                    <div>
+                        <img src="./img/index_bottom1.png" alt="">
+                        <p>喜欢</p>
+                    </div>
+                    <div>
+                        <img src="./img/index_bottom2.png" alt="">
+                        <p>收藏</p>
+                    </div>
+                    <div>
+                        <img src="./img/index_bottom3.png" alt="">
+                        <p>转发</p>
+                    </div>
+                    <div>
+                        <img src="./img/index_bottom4.png" alt="">
+                        <p>评论</p>
+                    </div>
+                    <div  onclick="clickMy()">
+                        <img src="./img/index_bottom5.png" alt="">
+                        <p>我的</p>
+                    </div>
+                </div>
+                <div class="index-main" onclick="clickDetail()">
+                    <p class="index-main-title">大凉山泸沽湖特产包装</p>
+                    <p class="index-main-desc">泸沽湖摩梭人家盛产阿肖苦荞,苦荞的全部营养滋润着摩</p>
+                    <div class="index-main-desc1">
+                        <span class="index-main-desc">梭人的男人和......</span>
+                        <p class="index-main-desc1">
+                            <span>图文详情</span>
+                            <img src="./img/index_bottom6.png" alt="">
+                        </p>
+                    </div>
+                    <p class="index-main-desc4">设计同款</p>
+                </div>
+                
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img4.jpg" alt="">
+        `   </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img5.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img6.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img7.jpg" alt="">
+        `   </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img8.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide-img" src="./img/index_img9.jpg" alt="">
+            </div>
+        </div>
+      </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        pagination: '.pagination',
+        paginationClickable: true,
+        mode: 'vertical'
+    })
+
+    function clickDetail() {
+        window.location.href = 'detail.html'
+    }
+
+    function clickMy() {
+        window.location.href = 'my.html'
+    }
+    
+
+</script>
+</html>
