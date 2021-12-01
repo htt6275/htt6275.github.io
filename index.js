@@ -1,6 +1,6 @@
-import * as T from './_snowpack/pkg/three.js'
-import { OrbitControls } from "./_snowpack/pkg/three/examples/jsm/controls/OrbitControls.js";
-import { TrackballControls } from "./_snowpack/pkg/three/examples/jsm/controls/TrackballControls.js";
+import * as T from './snowpack/pkg/three.js'
+import { OrbitControls } from "./snowpack/pkg/three/examples/jsm/controls/OrbitControls.js";
+import { TrackballControls } from "./snowpack/pkg/three/examples/jsm/controls/TrackballControls.js";
 
 class product {
     constructor(id, width, height) {
