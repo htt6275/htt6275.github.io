@@ -13,39 +13,103 @@
     <link rel="stylesheet" href="./common/swiper.css" />
     <script src="./common/index.js"></script>
     <title>自会</title>
+    <style>
+        .index-detail{
+            width: 1.8rem;
+            height: 0.5rem;
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1rem;
+            z-index: 9;
+        }
+        .index-detail-3D{
+            width: 2rem;
+            height: 0.8rem;
+            position: absolute;
+            bottom: 1.4rem;
+            left: 0.9rem;
+            z-index: 99;
+            overflow: hidden;
+        }
+        .index-top{
+            width: 100%;
+            height: 0.8rem;
+            padding: 0 0.6rem;
+            position: absolute;
+            z-index: 9;
+            top: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .index-top div{
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- 头部icon -->
+    <div class="index-top">
+        <div onclick="clickDevelop()"></div>
+        <div onclick="clickDevelop()"></div>
+    </div>
+    <div class="index-bottom">
+        <div onclick="clickDevelop()">
+            <!-- <img src="./img/index_bottom1.png" alt="">
+            <p>喜欢</p> -->
+        </div>
+        <div onclick="clickDevelop()">
+            <!-- <img src="./img/index_bottom2.png" alt="">
+            <p>收藏</p> -->
+        </div>
+        <div onclick="clickDevelop()">
+            <!-- <img src="./img/index_bottom3.png" alt="">
+            <p>转发</p> -->
+        </div>
+        <div onclick="clickDevelop()">
+            <!-- <img src="./img/index_bottom4.png" alt="">
+            <p>评论</p> -->
+        </div>
+        <div  onclick="clickMy()">
+            <!-- <img src="./img/index_bottom5.png" alt="">
+            <p>我的</p> -->
+        </div>
+    </div>
+   
+    <!-- <img class="index-icon1" src="./img/index_icon1.png" alt="">
+    <img class="index-icon2" src="./img/index_icon2.png" alt="">
+    <img class="index-icon3" src="./img/index_bottom7.png" alt="">
+    <div class="index-bottom">
+        <div>
+            <img src="./img/index_bottom1.png" alt="">
+            <p>喜欢</p>
+        </div>
+        <div>
+            <img src="./img/index_bottom2.png" alt="">
+            <p>收藏</p>
+        </div>
+        <div>
+            <img src="./img/index_bottom3.png" alt="">
+            <p>转发</p>
+        </div>
+        <div>
+            <img src="./img/index_bottom4.png" alt="">
+            <p>评论</p>
+        </div>
+        <div  onclick="clickMy()">
+            <img src="./img/index_bottom5.png" alt="">
+            <p>我的</p>
+        </div>
+    </div> -->
+    <!-- <div class="index—my"  onclick="clickMy()"></div> -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img1.jpg" alt="">
-                <img class="index-icon1" src="./img/index_icon1.png" alt="">
-                <img class="index-icon2" src="./img/index_icon2.png" alt="">
-                <img class="index-icon3" src="./img/index_bottom7.png" alt="">
-                <div class="index-bottom">
-                    <div>
-                        <img src="./img/index_bottom1.png" alt="">
-                        <p>喜欢</p>
-                    </div>
-                    <div>
-                        <img src="./img/index_bottom2.png" alt="">
-                        <p>收藏</p>
-                    </div>
-                    <div>
-                        <img src="./img/index_bottom3.png" alt="">
-                        <p>转发</p>
-                    </div>
-                    <div>
-                        <img src="./img/index_bottom4.png" alt="">
-                        <p>评论</p>
-                    </div>
-                    <div  onclick="clickMy()">
-                        <img src="./img/index_bottom5.png" alt="">
-                        <p>我的</p>
-                    </div>
-                </div>
-                <div class="index-main" onclick="clickDetail()">
+                <div class="index-detail" onclick="clickDevelop()"></div>
+                <!-- <div class="index-main" onclick="clickDetail()">
                     <p class="index-main-title">大凉山泸沽湖特产包装</p>
                     <p class="index-main-desc">泸沽湖摩梭人家盛产阿肖苦荞,苦荞的全部营养滋润着摩</p>
                     <div class="index-main-desc1">
@@ -56,35 +120,44 @@
                         </p>
                     </div>
                     <p class="index-main-desc4">设计同款</p>
-                </div>
+                </div> -->
                 
             </div>
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img2.jpg" alt="">
+                <div class="index-detail" onclick="clickDevelop()"></div>
             </div>
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img3.jpg" alt="">
+                <div class="index-detail" onclick="clickDevelop()"></div>
             </div>
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img4.jpg" alt="">
+                <div class="index-detail" onclick="clickDevelop()"></div>
         `   </div>
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img5.jpg" alt="">
+                <div class="index-detail-3D" onclick="click3D()"></div>
             </div>
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img6.jpg" alt="">
+                <div class="index-detail" onclick="clickDevelop()"></div>
             </div>
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img7.jpg" alt="">
+                <div class="index-detail" onclick="clickDevelop()"></div>
         `   </div>
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img8.jpg" alt="">
+                <div class="index-detail" onclick="clickDevelop()"></div>
             </div>
             <div class="swiper-slide">
                 <img class="swiper-slide-img" src="./img/index_img9.jpg" alt="">
+                <div class="index-detail" onclick="clickDevelop()"></div>
             </div>
         </div>
       </div>
+      
 </body>
 <script src="./js/jquery.min.js"></script>
 <script src="./js/swiper.min.js"></script>
@@ -95,12 +168,16 @@
         mode: 'vertical'
     })
 
-    function clickDetail() {
+    function click3D() {
         window.location.href = 'detail.html'
     }
 
     function clickMy() {
         window.location.href = 'my.html'
+    }
+
+    function clickDevelop() {
+        window.location.href = 'develop.html'
     }
     
 

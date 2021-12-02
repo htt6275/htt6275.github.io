@@ -16,8 +16,14 @@
         .detail-bottom{
             width: 100%;
             position: absolute;
-            bottom: 0.1rem;
+            bottom: 0.3rem;
             left: 0;
+        }
+        .detail-top{
+            position: absolute;
+            top: 0.4rem;
+            right: 0.5rem;
+            width: 0.8rem;
         }
     </style>
 </head>
@@ -26,19 +32,30 @@
     <div class="mine-warp">
         <div class="mine">
             <canvas id="webgl"></canvas>
+            <img onclick="clickDevelop()" class="detail-top" src="./img/3d_icon1.png" alt="">
             <div class="mine-bottom detail-bottom">
-                <div class="mine-bottom-left">
-                    <div onclick="returnPage()">
-                        <img class="return_iocn" src="./img/return_iocn.png" alt="">
-                        <p>返回上页</p>
-                    </div>
-                    <div onclick="clickHome()">  
-                        <img src="./img/home_icon1.png" alt="">
-                        <p>首页</p>
-                    </div>
+                <div onclick="returnPage()">
+                    <img src="./img/3d_icon2.png" alt="">
+                    <p>返回上页</p>
+                </div>
+                <div onclick="clickDevelop()">
+                    <img src="./img/3d_icon3.png" alt="">
+                    <p>资料上传</p>
+                </div>
+                <div onclick="clickDevelop()">
+                    <img src="./img/3d_icon4.png" alt="">
+                    <p>平面调整</p>
+                </div>
+                <div onclick="clickDevelop()">
+                    <img src="./img/3d_icon5.png" alt="">
+                    <p>渲染下载</p>
+                </div>
+                <div onclick="clickDevelop()">
+                    <img src="./img/3d_icon6.png" alt="">
+                    <p>生产制作</p>
                 </div>
                 <div onclick="clickMy()">
-                    <img src="./img/home_wode.png" alt="">
+                    <img src="./img/3d_icon7.png" alt="">
                     <p>我的</p>
                 </div>
             </div>
@@ -54,8 +71,8 @@
     function clickMy() {
         window.location.href = 'my.html'
     }
-    function clickHome() {
-        window.location.href = 'index.html'
+    function clickDevelop() {
+        window.location.href = 'develop.html'
     }
     
 </script>
