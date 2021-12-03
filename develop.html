@@ -13,30 +13,53 @@
     <script src="./common/index.js"></script>
     <title>自会</title>
     <style>
-        
+        .develop-wrapper{
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+        .develop-wrapper img{
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            width: 5.4rem;
+        }
+        .develop-wrapper p{
+            font-size: 0.42rem;
+            color: #000;;
+        }
         .develop-warp{
             width: 100%;
             position: absolute;
-            bottom: 0.8rem;
+            bottom: 0.4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-right: 0.5rem;
+            padding-right: 0.8rem;
             padding-left: 0.8rem;
             box-sizing: border-box;
         }
-        .develop-warp div{
-            width: 1rem;
-            height: 1.2rem;
-        }
         .develop-center{
             margin-left: 0.4rem;
+            text-align: center;
         }
         .develop-warp .develop-center-main{
             width: 2.6rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            text-align: center;
+        }
+        .develop_icon{
+           width: 0.8rem; 
+           margin-bottom: 0.2rem;
+        }  
+        .develop_icon1{
+           width: 1rem; 
+           margin-bottom: 0.2rem;
+        }  
+        .develop_icon3{
+            width: 0.8rem; 
+           margin-bottom: 0.2rem;
         }
     
     </style>
@@ -45,19 +68,29 @@
 <body>
   
     <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/kong.jpg" alt="">
-            </div>
+        <div class="develop-wrapper">
+            <img src="./img/develop_img.jpg" alt="">
+            <p>生命正在创造......</p>
         </div>
       </div>
       <div class="develop-warp">
-           <div class="develop-center-main">
-                <div onclick="returnPage()"></div>
-                <div class="develop-center" onclick="clickHome()"></div>
-           </div>
-            <div class="develop-center" onclick="clickMy()"></div>
+        <div class="develop-center-main">
+            <div onclick="returnPage()">
+                <img class="develop_icon" src="./img/develop_icon.jpg" alt="">
+                <p>返回上页</p>
+            </div>
+            <div class="develop-center" onclick="clickHome()">
+                <img class="develop_icon1" src="./img/develop_icon1.jpg" alt="">
+                <p>首页</p>
+            </div>
         </div>
+        <div class="develop-center" onclick="clickMy()">
+            <img class="develop_icon3" src="./img/develop_icon2.jpg" alt="">
+            <p>我的</p>
+        </div>
+    </div>
+        
+
 </body>
 <script src="./js/jquery.min.js"></script>
 <script>

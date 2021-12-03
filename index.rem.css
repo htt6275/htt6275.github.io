@@ -25,29 +25,30 @@
     z-index: 9;
 }
 .index-icon1{
-    width: 0.6rem !important;
+    width: 0.7rem !important;
     position: absolute;
-    top: 0.6rem;
+    top: 0.4rem;
     left: 0.6rem;
     z-index: 9;
 }
 .index-icon2{
-    width: 0.6rem !important;
+    width: 0.8rem !important;
     position: absolute;
-    top: 0.7rem;
+    top: 0.4rem;
     right: 0.7rem;
     z-index: 9;
 }
 .index-bottom{
     width: 6.4rem !important;
     position: absolute;
-    bottom: 0.1rem;
+    bottom: 0.4rem;
     right: 0.9rem;
     z-index: 99;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #fff;
+    text-align: center;
 }
 .index-bottom img{
     width: 0.8rem;
@@ -64,7 +65,7 @@
     width: 90%;
     height: 4.2rem;
     position: absolute;
-    bottom: 0.6rem;
+    bottom: 0.2rem;
     right: 5%;
     text-align: left;
 }
