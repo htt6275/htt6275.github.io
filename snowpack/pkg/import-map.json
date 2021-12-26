@@ -1,7 +1,0 @@
-{
-  "imports": {
-    "three": "./three.js",
-    "three/examples/jsm/controls/OrbitControls": "./three/examples/jsm/controls/OrbitControls.js",
-    "three/examples/jsm/controls/TrackballControls": "./three/examples/jsm/controls/TrackballControls.js"
-  }
-}

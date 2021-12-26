@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+	<script src="js/jquery.bigcolorpicker.js"></script>
+	<script src="js/utility.js"></script>
+	<script src="js/draw.js"></script>
+	<script src="js/storage.js"></script>
+	<link rel="stylesheet" href="css/canvas.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.bigcolorpicker.css" type="text/css" />
+	<style>
+		body {
+			background: white;
+		}
+		.warp{
+			width: 100%;
+			background: #fff;
+		}
+		.box-warp{
+			width: 100%;
+			cursor: pointer;
+		}
+		.box-img-warp{
+			margin: 40px auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.box-img-warp img{
+			height: 80px;
+			margin-left: 10px;
+		}
+		.pic-warp{
+			width: 100%;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+		}
+
+		.pic-warp img{
+			height: 500px;
+		}
+		.move {
+			transform: translate(10px, 200px) scale(3)
+		}
+		.inner-img {
+			transition-duration: 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<div class="warp">
+		<div class="box-warp">
+			<div class="box-img-warp">
+				<img class="inner-img1 inner-img" src="./images/4.jpg" alt="">
+				<img class="inner-img2 inner-img" src="./images/4.jpg" alt="">
+				<img class="inner-img3 inner-img" src="./images/4.jpg" alt="">
+				<img class="inner-img4 inner-img" src="./images/4.jpg" alt="">
+				<img class="inner-img6 inner-img" src="./images/4.jpg" alt="">
+				<img class="inner-img5 inner-img" src="./images/1.jpg" alt="">
+				<img class="inner-img7 inner-img" src="./images/4.jpg" alt="">
+				<img class="inner-img8 inner-img" src="./images/1.jpg" alt="">
+				<img class="inner-img9 inner-img" src="./images/1.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	let curImg = null
+	const centerX = Math.floor(innerWidth/ 2)
+	const centerY = Math.floor(innerHeight / 2)
+	const imgs = document.getElementsByTagName('img')
+	document.addEventListener('click', function(e) {
+		if(curImg) {
+			curImg.style.cssText = ''
+		}
+		if(e.target instanceof Image) {
+			const img = e.target
+			animImage(img)
+		}
+	})
+
+	function animImage(img, type) {
+		const originRect = img.getClientRects()[0]
+		const {x, y, width, height} = originRect
+		const targetX = centerX - width / 2
+		const targetY = centerY - height / 2
+		const moveX = targetX - x
+		const moveY = targetY
+		const cssText = `transform: translate(${moveX}px, ${moveY}px) scale(4);`
+		img.style.cssText = cssText
+		curImg = img
+	}
+	window.onload = function(){
+		animImage(imgs[0])
+	}
+	
+</script>
+</html>

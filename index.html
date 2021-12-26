@@ -1,249 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no, email=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <link rel="stylesheet" href="./common/index.css" />
-    <link rel="stylesheet" href="./index.rem.css" />
-    <link rel="stylesheet" href="./common/swiper.css" />
-    <script src="./common/index.js"></script>
-    <title>自会</title>
-    <style>
-        .index-detail{
-            width: 1.8rem;
-            height: 0.5rem;
-            position: absolute;
-            bottom: 1.5rem;
-            left: 1rem;
-            z-index: 9;
-        }
-        .index-detail-3D{
-            width: 2rem;
-            height: 0.8rem;
-            position: absolute;
-            bottom: 1.4rem;
-            left: 0.9rem;
-            z-index: 99;
-            overflow: hidden;
-        }
-        .index-top{
-            width: 100%;
-            height: 0.8rem;
-            padding: 0 0.6rem;
-            position: absolute;
-            z-index: 9;
-            top: 0.4rem;
-            display: flex;
-            justify-content: space-between;
-            box-sizing: border-box;
-        }
-        .index-top div{
-            width: 1rem;
-            height: 1rem;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+	<script src="js/jquery.bigcolorpicker.js"></script>
+	<script src="js/utility.js"></script>
+	<script src="js/draw.js"></script>
+	<script src="js/storage.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="css/canvas.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.bigcolorpicker.css" type="text/css" />
+	<style>
+		.box-img1{
+			width: 500px;
+			height: 300px;
+			position: absolute;
+			top: 20%;
+			left: 30%;
+			z-index: 2;
+			cursor: pointer;
+		}
+		.box-img2{
+			width: 500px;
+			height: 300px;
+			position: absolute;
+			top: 30%;
+			left: 60%;
+			z-index: 2;
+			cursor: pointer;
+		}
+		.inner-img1{
+			width: 200px;
+			height: 160px;
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			z-index: 10;
+		}
+		.inner-img2{
+			height: 100px;
+			position: absolute;
+			left: 60px;
+			top: 50px;
+			z-index: 9;
+		}
+		.inner-img3{
+			height: 90px;
+			position: absolute;
+			left: 260px;
+			top: 50px;
+			z-index: 9;
+		}
+		.inner-img4{
+			height: 110px;
+			position: absolute;
+			left: 220px;
+			top: 200px;
+			z-index: 9;
+		}
+		.inner-img5{
+			height: 110px;
+			position: absolute;
+			left: 30px;
+			top: 200px;
+			z-index: 9;
+		}
+		.inner-img6{
+			height: 130px;
+			position: absolute;
+			left: 90px;
+			top: 250px;
+			z-index: 9;
+		}
+		.inner-img7{
+			height: 80px;
+			position: absolute;
+			left: 0px;
+			top: 150px;
+			z-index: 9;
+		}
+		.inner-img8{
+			height: 130px;
+			position: absolute;
+			left: 160px;
+			top: 20px;
+			z-index: 9;
+		}
+		.inner-img9{
+			height: 100px;
+			position: absolute;
+			left: 280px;
+			top: 130px;
+			z-index: 9;
+		}
+		.bigger {
+			transform: scale(1.3);
+		}
+		.inner-img {
+			transition-duration: 0.5s;
+		}
+		.box-button{
+			font-size: 20px;
+			position: fixed;
+			right: 10px;
+			top: 10px;
+			z-index: 9;
+			cursor: pointer;
+		}
+	</style>
 </head>
-
 <body>
-    <!-- 头部icon -->
-    <div class="index-top">
-        <div onclick="clickDevelop()">
-            <img class="index-icon1" src="./img/index_icon1.png" alt="">
-        </div>
-        <div onclick="clickDevelop()">
-            <img class="index-icon2" src="./img/index_icon2.png" alt="">
-        </div>
-    </div>
-    <div class="index-bottom">
-        <div onclick="clickDevelop()">
-            <img src="./img/index_bottom1.png" alt="">
-            <p>喜欢</p>
-        </div>
-        <div onclick="clickDevelop()">
-            <img src="./img/index_bottom2.png" alt="">
-            <p>收藏</p>
-        </div>
-        <div onclick="clickDevelop()">
-            <img src="./img/index_bottom3.png" alt="">
-            <p>转发</p>
-        </div>
-        <div onclick="clickDevelop()">
-            <img src="./img/index_bottom4.png" alt="">
-            <p>评论</p>
-        </div>
-        <div  onclick="clickMy()">
-            <img src="./img/index_bottom5.png" alt="">
-            <p>我的</p>
-        </div>
-    </div>
-    <img class="index-icon3" src="./img/index_bottom7.png" alt="">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img1.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">大凉山泸沽湖特产包装</p>
-                    <p class="index-main-desc">泸沽湖摩梭人家盛产阿肖苦荞,苦荞的全部营养滋润着摩</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">梭人的男人和......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="clickDevelop()">设计同款</p>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img2.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">黄力士润滑油</p>
-                    <p class="index-main-desc">力士润滑油是香港叶氏化工集团旗下润滑油品牌,2016年</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">开始委托美斯全面代理力......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="clickDevelop()">设计同款</p>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img3.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">大漠锶源沙漠矿泉水</p>
-                    <p class="index-main-desc">大漠锶源沙漠矿泉水是北京中康健民科技有限公司在</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">内蒙古毛乌素沙漠腹地......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="clickDevelop()">设计同款</p>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img4.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">视络疏护眼贴</p>
-                    <p class="index-main-desc">眼贴产品是新一代护眼产品,该产品不同于传统眼药水等</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">常规护理产品......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="clickDevelop()">设计同款</p>
-                </div>
-        `   </div>
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img5.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">泸沽湖摩梭人家苹果脆片</p>
-                    <p class="index-main-desc">泸沽湖摩梭人家苹果脆片包装设计既要体现泸沽湖独特</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">的民族特色,同时也要体现休......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="click3D()">设计同款</p>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img6.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">青藏高原燕窝牦牛肉</p>
-                    <p class="index-main-desc">燕窝牦牛肉是由青藏高原开发的藏族地区特有的高原地</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">区民族代表性的牦牛肉休闲食品......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="clickDevelop()">设计同款</p>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img7.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">力士金至尊润滑油</p>
-                    <p class="index-main-desc">力士金至尊作为力士润滑油老款产品的全新形象升级,在</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">设计上要求体现高端......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="clickDevelop()">设计同款</p>
-                </div>
-        `   </div>
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img8.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">青藏高原百味藏肉青稞饼</p>
-                    <p class="index-main-desc">百味藏肉青稞饼是由青藏高原开发的藏族地区特有的原</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">生态食品,2011年开发初期青藏......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="clickDevelop()">设计同款</p>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img class="swiper-slide-img" src="./img/index_img9.jpg" alt="">
-                <div class="index-main">
-                    <p class="index-main-title">贵州遵义土司贡米</p>
-                    <p class="index-main-desc">好米妈妈土司贡米包装设计是2016年贵州遵义市余庆县</p>
-                    <div class="index-main-desc1">
-                        <span class="index-main-desc">银梭米业有限公司为了......</span>
-                        <p class="index-main-desc1">
-                            <span>图文详情</span>
-                            <img src="./img/index_bottom6.png" alt="">
-                        </p>
-                    </div>
-                    <p class="index-main-desc4" onclick="clickDevelop()">设计同款</p>
-                </div>
-            </div>
-        </div>
-      </div>
-      
+	<div id="draw">
+		<ul class="draw_controller">
+			<li class="normal pencil" title="铅笔"></li>
+			<li class="normal handwriting" title="涂鸦"></li>
+			<li class="normal line showLine" title="线条大小"></li>
+			<li class="normal showColor" id="chooseColor" title="选择颜色"></li>
+			<li class="normal rubber" title="橡皮擦"></li>
+			<span>|</span>
+			<li class="normal drawLine" title="画直线"></li>
+			<li class="normal square" title="方形"></li>
+			<li class="normal circle" title="圆"></li>
+			<span>|</span>
+			<li class="normal cancel" title="撤销上一个操作"></li>
+			<li class="normal next" title="重做上一个操作"></li>	
+			<li class="normal clearContext" title="清屏"></li>
+			<li class="normal save" title="保存"></li>
+			<li class="normal downloadImage" title="下载"><a href="#" download="picture.png" id="downloadImage_a"></a></li>
+		</ul>
+		<div class="canvas_container">
+			<canvas id="canvas">浏览器不支持哦，亲</canvas>
+			<canvas id="canvas_bak"></canvas>
+		</div>
+		<div id="line_size" class="line_size normal">
+			<ul>
+				<li><button data-value="1" class="small"><span style="width: 2px; height: 2px;"></span></button></li>
+				<li><button data-value="3" class="small selected"><span style="width: 4px; height: 4px;"></span></button></li>
+				<li><button data-value="5"><span style="width: 8px; height: 8px;"></span></button></li>
+				<li><button data-value="7"><span style="width: 10px; height: 10px;"></span></button></li>
+			</ul>
+		</div>
+		<div class="box-button save">SAVE</div>
+		<div class="box-img1">
+			<img class="inner-img1 inner-img" src="./images/1.jpg" alt="">
+			<img class="inner-img2 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img3 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img4 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img6 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img5 inner-img" src="./images/1.jpg" alt="">
+			<img class="inner-img7 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img8 inner-img" src="./images/1.jpg" alt="">
+			<img class="inner-img9 inner-img" src="./images/1.jpg" alt="">
+		</div>
+		<!-- <div class="box-img2">
+			<img class="inner-img1 inner-img" src="./images/1.jpg" alt="">
+			<img class="inner-img2 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img3 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img4 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img6 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img5 inner-img" src="./images/1.jpg" alt="">
+			<img class="inner-img7 inner-img" src="./images/4.jpg" alt="">
+			<img class="inner-img8 inner-img" src="./images/1.jpg" alt="">
+			<img class="inner-img9 inner-img" src="./images/1.jpg" alt="">
+		</div> -->
+	</div>
+	<script>
+		const box1 = document.getElementsByClassName('box-img1')[0]
+		const imgs = document.getElementsByTagName('img')
+		box1.addEventListener('mouseenter', function() {
+			console.log('sdfsf>>>')
+			Array.prototype.forEach.call(imgs, img => {
+				img.classList.add('bigger')
+			});
+		})
+		box1.addEventListener('mouseleave', function() {
+			Array.prototype.forEach.call(imgs, img => {
+				img.classList.remove('bigger')
+			});
+		})
+		box1.addEventListener('click', function() {
+			window.location.href="./pic.html"
+		})
+		// const box2 = document.getElementsByClassName('box-img2')[0]
+		// const imgs2 = document.getElementsByTagName('img')
+		// box2.addEventListener('mouseenter', function() {
+		// 	console.log('sdfsf>>>')
+		// 	Array.prototype.forEach.call(imgs, img => {
+		// 		img.classList.add('bigger')
+		// 	});
+		// })
+		// box2.addEventListener('mouseleave', function() {
+		// 	Array.prototype.forEach.call(imgs, img => {
+		// 		img.classList.remove('bigger')
+		// 	});
+		// })
+		// box2.addEventListener('click', function() {
+		// 	window.location.href="./pic.html"
+		// })
+	</script>
 </body>
-<script src="./js/jquery.min.js"></script>
-<script src="./js/swiper.min.js"></script>
-<script>
-    var mySwiper = new Swiper('.swiper-container',{
-        pagination: '.pagination',
-        paginationClickable: true,
-        mode: 'vertical'
-    })
-
-    function click3D() {
-        window.location.href = 'detail.html'
-    }
-
-    function clickMy() {
-        window.location.href = 'my.html'
-    }
-
-    function clickDevelop() {
-        window.location.href = 'develop.html'
-    }
-    
-
-</script>
 </html>
